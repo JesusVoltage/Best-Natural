@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "tienda1-69464"
+  },
+  "targets": {
+    "tienda1-69464": {
+      "hosting": {
+        "Verdu": [
+          "tienda1-69464"
+        ]
+      }
+    }
+  }
+}

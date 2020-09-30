@@ -10,7 +10,6 @@ a{
 .contenedor-padre{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-top: #94D794 10px solid;
-    margin-top: 85px !important;
 }
 
 .item{
@@ -24,15 +23,10 @@ a{
     color: black !important;
 }
 
-.card{
-    min-height: 300px;
-    transition: 0.5s;
-
-}.card:hover{
-    cursor: pointer;
-    transform: scale(0.9);
+.targetita{
+    
 }
-
-.card-img-top{
-    max-height: 200px !important;
+.targetita:hover{
+    cursor: pointer;
+    
 }
