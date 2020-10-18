@@ -7,8 +7,17 @@ import { StaticService } from '../static.service';
 })
 export class DisplayComponent implements OnInit {
 
+
   targets: any;
+
   categorias: any;
+  nombreCategoria: string;
+  nombreProducto: string;
+
+  isCategory: boolean = false;
+  isProduct: boolean = false;
+  product: any;
+
   constructor(
     private staticService : StaticService
   ) { }
@@ -22,17 +31,33 @@ export class DisplayComponent implements OnInit {
     this.targets = this.categorias;
   }
 
-  action(id){
+  action(target: any){
     //if es categoria -- else 
-    if(id.substr(0,1) == "0"){
-      this.targets = this.staticService.getProductosById(id);
+    if(target.id.substr(0,1) == "0"){
+      this.targets = this.staticService.getProductosById(target.id);
+      this.nombreCategoria = target.nombre;
+      this.isCategory = true;
+
     }else{
-      console.log(id);
+      this.isProduct= true;
+      //Recogemos Datos del producto
+      this.product = target;
+      console.log(this.product);
     }
   }
 
   goToCategorias(){
+    if(this.isCategory) this.isCategory = false;
+    if(this.isProduct) this.isProduct = false;
     this.targets = this.categorias;
+    this.isCategory = false;
+  }
+
+  goToProduct(){
+
+  }
+  backToProducts(){
+    this.isProduct = false;
   }
 
 }

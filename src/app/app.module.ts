@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { DisplayComponent } from './display/display.component';
 import { TargetComponent } from './target/target.component';
+import { ProductoComponent } from './producto/producto.component';
 
 
 
@@ -20,7 +21,8 @@ import { TargetComponent } from './target/target.component';
     LoginComponent,
     MainComponent,
     DisplayComponent,
-    TargetComponent
+    TargetComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,

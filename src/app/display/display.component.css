@@ -24,9 +24,14 @@ a{
 }
 
 .targetita{
-    
+    transition: 0.4s;
 }
 .targetita:hover{
     cursor: pointer;
+    transform: scale(0.9);
     
+}
+
+.pointer:hover{
+    cursor: pointer;
 }

@@ -1,21 +1,35 @@
 <div class="container bg-light p-4 rounded contenedor-padre">
     <div class="pb-3">
         <ol class="breadcrumb migas">
-            <li (click)="goToCategorias();" class="breadcrumb-item"><a style="text-decoration: none;">Categorías</a></li>
+            <li (click)="goToCategorias();" class="breadcrumb-item pointer"><a style="text-decoration: none;">Categorías</a></li>
+            <li *ngIf="isCategory" (click)="backToProducts();" class="breadcrumb-item pointer"><a style="text-decoration: none;">{{nombreCategoria}}</a></li>
+            <li *ngIf="isProduct"  class="breadcrumb-item pointer"><a style="text-decoration: none;">{{product.nombre}}</a></li>
         </ol>
     </div>
 
 
-    <div class="container-fluid">
+    <div *ngIf="!isProduct" class="container-fluid">
         <div class="row">
             <div *ngFor="let target of targets;" class="col-sm-6 col-md-4">
-                <div (click)="action(target.id);" class="card targetita p-1 my-3 shadow-sm">
-                    <img class="card-img-top" src="">
+                <div (click)="action(target);" class="card targetita p-1 my-3 shadow-sm">
+                    <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/tienda1-69464.appspot.com/o/1.jpg?alt=media&token=0923d3e9-c56f-448b-a784-5c8e0860f519">
                     <div class="card-body">
                         <h5 class="card-title">{{target.nombre}}</h5>
                         <p class="card-text">Platanito weno de canarias</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="isProduct" class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/tienda1-69464.appspot.com/o/1.jpg?alt=media&token=0923d3e9-c56f-448b-a784-5c8e0860f519">
+            </div>
+            <div class="col-md-8">
+                <h2>datos</h2>
+                <h1>asd</h1>
             </div>
         </div>
     </div>
